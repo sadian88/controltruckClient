@@ -7,16 +7,20 @@ declare interface RouteInfo {
     icon: string;
     class: string;
 }
+
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Dashboard',  icon: 'ni-tv-2 text-primary', class: '' },
-    { path: '/fpreop1', title: 'Carga check list 1',  icon:'ni-archive-2 text-blue', class: '' },
-    { path: '/tables', title: 'Historial checklist',  icon:'ni-bullet-list-67 text-red', class: '' },
-    // { path: '/maps', title: 'Maps',  icon:'ni-pin-3 text-orange', class: '' },
-    { path: '/user-profile', title: 'User profile',  icon:'ni-single-02 text-yellow', class: '' }
-    
-    // { path: '/login', title: 'Login',  icon:'ni-key-25 text-info', class: '' },
-    // { path: '/register', title: 'Register',  icon:'ni-circle-08 text-pink', class: '' }
-];
+  
+  { path: '/dashboard', title: 'Dashboard',  icon: 'ni-tv-2 text-primary', class: '' },
+  { path: '/fpreop1', title: 'Carga check list 1',  icon:'ni-archive-2 text-blue', class: '' },
+  { path: '/tables', title: 'Historial checklist',  icon:'ni-bullet-list-67 text-red', class: '' },
+        // { path: '/maps', title: 'Maps',  icon:'ni-pin-3 text-orange', class: '' },
+  { path: '/user-profile', title: 'User profile',  icon:'ni-single-02 text-yellow', class: '' }
+        
+        // { path: '/login', title: 'Login',  icon:'ni-key-25 text-info', class: '' },
+        // { path: '/register', title: 'Register',  icon:'ni-circle-08 text-pink', class: '' }
+];      
+
+
 
 @Component({
   selector: 'app-sidebar',
@@ -31,9 +35,16 @@ export class SidebarComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
-    this.router.events.subscribe((event) => {
-      this.isCollapsed = true;
-   });
+    if(localStorage.getItem('token') != undefined)
+    {
+      this.menuItems = ROUTES.filter(menuItem => menuItem);
+      this.router.events.subscribe((event) => {
+        this.isCollapsed = true;
+      });
+    }
+    else{
+      this.router.navigateByUrl('login');
+    }
+    
   }
 }

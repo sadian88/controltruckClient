@@ -17,7 +17,10 @@
       <div class="card bg-secondary shadow border-0">
         <div class="card-body px-lg-5 py-lg-5">
           <div class="text-center text-muted mb-4">
-            <small>Escribe tus credenciales</small>
+            <small>Escribe tus credenciales</small>          
+          </div>
+          <div [hidden]="!result" class="text-center text-muted mb-4">
+            <small >Verifica tus credenciales !!</small>
           </div>
           <form role="form">
             <div class="form-group mb-3">

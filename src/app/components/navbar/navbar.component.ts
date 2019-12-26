@@ -2,6 +2,8 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Router } from '@angular/router';
+import { Persona } from 'src/app/models/personas';
+import { PersonaService } from 'src/app/services/persona.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,12 +14,29 @@ export class NavbarComponent implements OnInit {
   public focus;
   public listTitles: any[];
   public location: Location;
-  constructor(location: Location,  private element: ElementRef, private router: Router) {
+
+  public persona: Persona;
+  public nombreCompleto: string;
+  public user:any;
+  public token:string;
+  
+  constructor(private pService: PersonaService, location: Location,  private element: ElementRef, private router: Router) {
     this.location = location;
+    this.persona = {
+      Nombre:'',
+      Apellido:''
+    }
   }
 
   ngOnInit() {
     this.listTitles = ROUTES.filter(listTitle => listTitle);
+    if(localStorage.getItem('token')!= undefined)
+    {
+      this.token = localStorage.getItem('token');
+      this.user = JSON.parse(localStorage.getItem('usuario'));
+      this.getPersonaByUser(this.user[0].Id);
+     
+    }
   }
   getTitle(){
     var titlee = this.location.prepareExternalUrl(this.location.path());
@@ -32,5 +51,21 @@ export class NavbarComponent implements OnInit {
     }
     return 'Dashboard';
   }
+
+  public getPersonaByUser(Id:number){
+
+    this.pService.getPersona(Id, this.token)
+    .subscribe(
+      res => {
+        this.persona=res[0];
+      },
+      err => console.log(err)
+    )           
+}
+
+logout(){
+  localStorage.clear();
+  this.location.go('/login');
+}
 
 }

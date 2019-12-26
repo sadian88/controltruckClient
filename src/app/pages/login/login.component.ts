@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit, OnDestroy {
-  constructor(private usuarioServices: AuthService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor( private usuarioServices: AuthService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   
   usuario: Usuario = {
@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   };
 
   result:boolean;
+  token:string;
 
   ngOnInit() {
   }
@@ -31,16 +32,24 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.usuarioServices.auth(this.usuario)
         .subscribe(
           res => {
-            console.log(res);
-            this.usuario = res;
-            this.result = true;
+            
+            if(res.token != ''){             
+              
+              localStorage.setItem('token', res.token);
+              localStorage.setItem('usuario', JSON.stringify(res.usuario));
+              this.router.navigateByUrl('dashboard');
+              this.usuario = res;
+              
+            }
+            else{     
+              console.log("entra en no");
+              this.result = true;
+            }
+
           },
           err => console.log(err)
-        )
-
-        console.log(this.usuario);
-        
-    }
-  
+        )        
+      
+    }  
 
 }
