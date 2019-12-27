@@ -104,24 +104,24 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr *ngFor="let c of chq">
                 <td>
-                  <button type="button" class="btn btn-success btn-sm">ver excel</button>
+                  <button type="button" (click)="descargaexcel()" class="btn btn-success btn-sm">ver excel</button>
                 </td>
                 <th scope="row">
                   <div class="media align-items-center">
                
                     <div class="media-body">
-                      <span class="mb-0 text-sm">24 2019 09:35:39 GMT-0500</span>
+                      <span class="mb-0 text-sm">{{c.Fecha}}</span>
                     </div>
                   </div>
                 </th>
                 <td>
-                  VHL R35
+                  {{c.Vehiculo}}
                 </td>
                 <td>
                   <span class="badge badge-dot mr-4">
-                    <i class="bg-warning"></i> Carlo Alberto Diaz Cortez
+                    <i class="bg-warning"></i> {{c.Realizado_por}}
                   </span>
                 </td>
               </tr>

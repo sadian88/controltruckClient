@@ -25,5 +25,5 @@ export class PersonaService {
        });
     
     return this.http.get<Persona>(this.API_URI + '/personas', { headers: httpHeaders });
-    }
+  }
 }

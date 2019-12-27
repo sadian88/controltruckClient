@@ -1,3 +1,4 @@
+
 <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
   <div class="container-fluid">
 
@@ -27,13 +28,13 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-vehiculo">VEHICULO</label>
-                      <input type="text" id="input-vehiculo" class="form-control form-control-alternative" placeholder="Username" value="TRH465"> 
+                      <input type="text" id="input-vehiculo" class="form-control form-control-alternative" placeholder="Username" value="TRH465" [(ngModel)]="chq.Vehiculo" name="vehiculo"> 
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-email">Realizado por:</label>
-                      <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com">
+                      <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="{{persona}}" >
                     </div>
                   </div>
                 </div>
@@ -47,7 +48,7 @@
                   <div class="col">
                     <div class="form-group">
                       <label class="form-control-label" for="input-address">Alta/Baja</label>
-                      <select class="form-control form-control-alternative" name="select">
+                      <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.L_alta_baja" name="L_alta_baja">
                         <option value="B" selected>B</option> 
                         <option value="M">M</option>
                       </select>
@@ -56,7 +57,7 @@
                   <div class="col">
                     <div class="form-group">
                       <label class="form-control-label" for="input-address">Intermitentes(GUIÑADORES)</label>
-                      <select class="form-control form-control-alternative" name="select">
+                      <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.L_intermitentes" name="L_intermitentes">
                         <option value="B" selected>B</option> 
                         <option value="M">M</option>
                       </select>
@@ -65,7 +66,7 @@
                   <div class="col">
                     <div class="form-group">
                       <label class="form-control-label" for="input-address">Marcha atrás(LUZ/RETRO)</label>
-                      <select class="form-control form-control-alternative" name="select">
+                      <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.L_Marcha_atras" name="L_Marcha_atras">
                         <option value="B" selected>B</option> 
                         <option value="M">M</option>
                       </select>
@@ -74,7 +75,7 @@
                   <div class="col">
                     <div class="form-group">
                       <label class="form-control-label" for="input-address">Luces de freno</label>
-                      <select class="form-control form-control-alternative" name="select">
+                      <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.L_freno" name="L_freno">
                         <option value="B" selected>B</option> 
                         <option value="M">M</option>
                       </select>
@@ -91,7 +92,7 @@
                    <div class="col">
                      <div class="form-group">
                        <label class="form-control-label" for="input-address">Chequeo G Motor</label>
-                       <select class="form-control form-control-alternative" name="select">
+                       <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.Che_general_motor" name="Che_general_motor">
                          <option value="B" selected>B</option> 
                          <option value="M">M</option>
                        </select>
@@ -100,7 +101,7 @@
                     <div class="col">
                      <div class="form-group">
                        <label class="form-control-label" for="input-address">Sistema pedal/frenos</label>
-                       <select class="form-control form-control-alternative" name="select">
+                       <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.Sistema_pedal_freno" name="Sistema_pedal_freno">
                          <option value="B" selected>B</option> 
                          <option value="M">M</option>
                        </select>
@@ -109,7 +110,7 @@
                     <div class="col">
                      <div class="form-group">
                        <label class="form-control-label" for="input-address">Sistema direccion</label>
-                       <select class="form-control form-control-alternative" name="select">
+                       <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.Sistema_direccion" name="Sistema_direccion">
                          <option value="B" selected>B</option> 
                          <option value="M">M</option>
                        </select>
@@ -118,7 +119,7 @@
                     <div class="col">
                      <div class="form-group">
                        <label class="form-control-label" for="input-address">Nivel combustible</label>
-                       <select class="form-control form-control-alternative" name="select">
+                       <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.N_combustible" name="N_combustible">
                          <option value="B" selected>B</option> 
                          <option value="M">M</option>
                        </select>
@@ -127,7 +128,7 @@
                    <div class="col">
                     <div class="form-group">
                       <label class="form-control-label" for="input-address">Nivel aceite</label>
-                      <select class="form-control form-control-alternative" name="select">
+                      <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.N_aceite" name="N_aceite">
                         <option value="B" selected>B</option> 
                         <option value="M">M</option>
                       </select>
@@ -138,7 +139,7 @@
                   <div class="col">
                     <div class="form-group">
                       <label class="form-control-label" for="input-address">Nivel L frenos</label>
-                      <select class="form-control form-control-alternative" name="select">
+                      <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.N_liquido_frenos" name="N_liquido_frenos">
                         <option value="B" selected>B</option> 
                         <option value="M">M</option>
                       </select>
@@ -147,7 +148,7 @@
                    <div class="col">
                     <div class="form-group">
                       <label class="form-control-label" for="input-address">Nivel L hidraulico</label>
-                      <select class="form-control form-control-alternative" name="select">
+                      <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.N_liquido_hidraulico" name="N_liquido_hidraulico">
                         <option value="B" selected>B</option> 
                         <option value="M">M</option>
                       </select>
@@ -156,7 +157,7 @@
                    <div class="col">
                     <div class="form-group">
                       <label class="form-control-label" for="input-address">Nivel deposito agua</label>
-                      <select class="form-control form-control-alternative" name="select">
+                      <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.N_dispositivo_agua" name="N_dispositivo_agua">
                         <option value="B" selected>B</option> 
                         <option value="M">M</option>
                       </select>
@@ -165,7 +166,7 @@
                    <div class="col">
                     <div class="form-group">
                       <label class="form-control-label" for="input-address">Latoneria pintura</label>
-                      <select class="form-control form-control-alternative" name="select">
+                      <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.Latoneria_pintura" name="Latoneria_pintura">
                         <option value="B" selected>B</option> 
                         <option value="M">M</option>
                       </select>
@@ -174,7 +175,7 @@
                   <div class="col">
                    <div class="form-group">
                      <label class="form-control-label" for="input-address">Equipo refrigeracion</label>
-                     <select class="form-control form-control-alternative" name="select">
+                     <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.Equipo_refrijeracion" name="Equipo_refrijeracion">
                        <option value="B" selected>B</option> 
                        <option value="M">M</option>
                      </select>
@@ -185,7 +186,7 @@
                   <div class="col">
                     <div class="form-group">
                       <label class="form-control-label" for="input-address">Bocina</label>
-                      <select class="form-control form-control-alternative" name="select">
+                      <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.bocina" name="bocina">
                         <option value="B" selected>B</option> 
                         <option value="M">M</option>
                       </select>
@@ -194,7 +195,7 @@
                    <div class="col">
                     <div class="form-group">
                       <label class="form-control-label" for="input-address">Cint. seguridad(todos)</label>
-                      <select class="form-control form-control-alternative" name="select">
+                      <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.Cinturon_seguridad" name="Cinturon_seguridad">
                         <option value="B" selected>B</option> 
                         <option value="M">M</option>
                       </select>
@@ -203,7 +204,7 @@
                    <div class="col">
                     <div class="form-group">
                       <label class="form-control-label" for="input-address">Tablero de control</label>
-                      <select class="form-control form-control-alternative" name="select">
+                      <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.Tablero_control" name="Tablero_control">
                         <option value="B" selected>B</option> 
                         <option value="M">M</option>
                       </select>
@@ -212,7 +213,7 @@
                    <div class="col">
                     <div class="form-group">
                       <label class="form-control-label" for="input-address">Espejos retrovisores</label>
-                      <select class="form-control form-control-alternative" name="select">
+                      <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.Espejos_retrovisores" name="Espejos_retrovisores">
                         <option value="B" selected>B</option> 
                         <option value="M">M</option>
                       </select>
@@ -221,7 +222,7 @@
                   <div class="col">
                    <div class="form-group">
                      <label class="form-control-label" for="input-address">Estado puertas</label>
-                     <select class="form-control form-control-alternative" name="select">
+                     <select class="form-control form-control-alternative" name="select"[(ngModel)]="chq.Estado_puertas" name="Estado_puertas">
                        <option value="B" selected>B</option> 
                        <option value="M">M</option>
                      </select>
@@ -232,7 +233,7 @@
                   <div class="col">
                     <div class="form-group">
                       <label class="form-control-label" for="input-address">Orden aseo</label>
-                      <select class="form-control form-control-alternative" name="select">
+                      <select class="form-control form-control-alternative" name="select"[(ngModel)]="chq.Orden_aseo" name="Orden_aseo">
                         <option value="B" selected>B</option> 
                         <option value="M">M</option>
                       </select>
@@ -241,7 +242,7 @@
                    <div class="col">
                     <div class="form-group">
                       <label class="form-control-label" for="input-address">Soat / tarjeta</label>
-                      <select class="form-control form-control-alternative" name="select">
+                      <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.Soat_tarjeta" name="Soat_tarjeta">
                         <option value="B" selected>B</option> 
                         <option value="M">M</option>
                       </select>
@@ -258,7 +259,7 @@
                     <div class="col">
                       <div class="form-group">
                         <label class="form-control-label" for="input-address">Delanteras</label>
-                        <select class="form-control form-control-alternative" name="select">
+                        <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.Ll_delanteras" name="Ll_delanteras">
                           <option value="B" selected>B</option> 
                           <option value="M">M</option>
                         </select>
@@ -267,7 +268,7 @@
                     <div class="col">
                       <div class="form-group">
                         <label class="form-control-label" for="input-address">Traseras</label>
-                        <select class="form-control form-control-alternative" name="select">
+                        <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.Ll_traseras" name="Ll_traseras">
                           <option value="B" selected>B</option> 
                           <option value="M">M</option>
                         </select>
@@ -276,7 +277,7 @@
                     <div class="col">
                       <div class="form-group">
                         <label class="form-control-label" for="input-address">Repuesto</label>
-                        <select class="form-control form-control-alternative" name="select">
+                        <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.Ll_repuesto" name="Ll_repuesto">
                           <option value="B" selected>B</option> 
                           <option value="M">M</option>
                         </select>
@@ -285,7 +286,7 @@
                     <div class="col">
                       <div class="form-group">
                         <label class="form-control-label" for="input-address">Aprete de ruedas</label>
-                        <select class="form-control form-control-alternative" name="select">
+                        <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.Aprete_ruedas" name="Aprete_ruedas">
                           <option value="B" selected>B</option> 
                           <option value="M">M</option>
                         </select>
@@ -302,7 +303,7 @@
                     <div class="col">
                       <div class="form-group">
                         <label class="form-control-label" for="input-address">Botiquin</label>
-                        <select class="form-control form-control-alternative" name="select">
+                        <select class="form-control form-control-alternative" name="select" [(ngModel)]="chq.K_botiquin" name="K_botiquin">
                           <option value="B" selected>B</option> 
                           <option value="M">M</option>
                         </select>
@@ -311,7 +312,7 @@
                     <div class="col">
                       <div class="form-group">
                         <label class="form-control-label" for="input-address">Extintor presurizado</label>
-                        <select class="form-control form-control-alternative" name="select">
+                        <select class="form-control form-control-alternative" name="select"[(ngModel)]="chq.K_extintor" name="K_extintor">
                           <option value="B" selected>B</option> 
                           <option value="M">M</option>
                         </select>
@@ -320,7 +321,7 @@
                     <div class="col">
                       <div class="form-group">
                         <label class="form-control-label" for="input-address">Herramientas</label>
-                        <select class="form-control form-control-alternative" name="select">
+                        <select class="form-control form-control-alternative" name="select"[(ngModel)]="chq.K_herramientas" name="K_herramientas">
                           <option value="B" selected>B</option> 
                           <option value="M">M</option>
                         </select>
@@ -335,10 +336,10 @@
               <div class="pl-lg-4">
                 <div class="form-group">
                   <label>Otro</label>
-                  <textarea rows="4" class="form-control form-control-alternative" placeholder="alguna otra cosa por reportar ?..."></textarea>
+                  <textarea rows="4" class="form-control form-control-alternative" placeholder="alguna otra cosa por reportar ?..." [(ngModel)]="chq.Otro" name="Otro"></textarea>
                 </div>
               </div>
-              <button type="submit" class="btn btn-success btn-lg btn-block">Cargar lista de chequeo</button>
+              <button type="submit" class="btn btn-success btn-lg btn-block" (click)="saveChequeo()">Cargar lista de chequeo</button>
             </form>
           </div>
         </div>

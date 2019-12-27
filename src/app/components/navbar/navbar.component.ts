@@ -58,6 +58,7 @@ export class NavbarComponent implements OnInit {
     .subscribe(
       res => {
         this.persona=res[0];
+        localStorage.setItem('nombre',this.persona.Nombre + ' ' + this.persona.Apellido);
       },
       err => console.log(err)
     )           
