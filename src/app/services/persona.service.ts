@@ -26,4 +26,15 @@ export class PersonaService {
     
     return this.http.get<Persona>(this.API_URI + '/personas', { headers: httpHeaders });
   }
+
+  getVehiculos(t : string) {
+    
+    const httpHeaders = new HttpHeaders ({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + t 
+    });
+
+    return this.http.get(`${this.API_URI}/vehiculos`, { headers: httpHeaders });
+  }
+  
 }

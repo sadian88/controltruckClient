@@ -39,6 +39,9 @@ export class ChequeolistService {
     return this.http.post(`${this.API_URI}/chequeo`, chequeo, { headers: httpHeaders });
   }
 
+
+
+
 }
 
 

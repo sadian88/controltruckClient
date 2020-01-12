@@ -15,6 +15,8 @@ import { ComponentsModule } from './components/components.module';
 import { NotifierModule, NotifierOptions } from "angular-notifier";
 
 
+
+
 const customNotifierOptions: NotifierOptions = {
 	position: {
 		horizontal: {
@@ -71,6 +73,7 @@ const customNotifierOptions: NotifierOptions = {
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent
+
   ],
   providers: [],
   bootstrap: [AppComponent]

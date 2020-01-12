@@ -13,6 +13,8 @@ import { UserProfileComponent } from '../../pages/user-profile/user-profile.comp
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { FPreop1Component } from '../../pages/fpreop1/fpreop1.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ComprarepuestoComponent } from '../../pages/comprarepuesto/comprarepuesto.component';
+import { MantenimientoComponent } from '../../pages/mantenimiento/mantenimiento.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -30,7 +32,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     TablesComponent,
     IconsComponent,
     MapsComponent,
-    FPreop1Component
+    FPreop1Component,
+    ComprarepuestoComponent,
+    MantenimientoComponent
+    
   ]
 })
 

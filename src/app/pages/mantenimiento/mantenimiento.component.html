@@ -1,0 +1,81 @@
+
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+        <div class="card bg-secondary shadow">
+          <div class="card-header bg-white border-0">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h3 class="mb-0">Carga de arreglos</h3>
+              </div>
+              <div class="col-4 text-right">
+                <h4 class="mb-0">{{fecha_actual}}</h4>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <form>
+              <h6 class="heading-small text-muted mb-4">Fecha de carga : {{fecha_actual | date:'dd-MM-yyyy'}}</h6>
+              <div class="pl-lg-4">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-vehiculo">Fecha de compra</label>
+                      <input type="text" id="input-vehiculo" class="form-control form-control-alternative" placeholder="Username" value="TRH465" [(ngModel)]="chq.Vehiculo" name="vehiculo"> 
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-email">Realizado por:</label>
+                      <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="{{persona}}" >
+                    </div>
+                  </div>
+                </div>
+ 
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-address">Placa</label>
+                      <input type="number" id="input-email" class="form-control form-control-alternative" placeholder="{{persona}}" >
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-address">Tipo de arreglo</label>
+                      <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="{{persona}}" >
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-address">Valor</label>
+                      <input type="number" id="input-email" class="form-control form-control-alternative" placeholder="{{persona}}" >
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-address">Proveedor</label>
+                      <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="{{persona}}" >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                <div class="form-group">
+                  <label>Observaciones</label>
+                  <textarea rows="4" class="form-control form-control-alternative" placeholder="alguna otra cosa por reportar ?..." [(ngModel)]="chq.Otro" name="Otro"></textarea>
+                </div>
+             
+              <button type="submit" class="btn btn-success btn-lg btn-block" (click)="saveChequeo()">Cargar repuesto</button>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+ </div>

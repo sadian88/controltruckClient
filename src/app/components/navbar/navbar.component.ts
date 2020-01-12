@@ -35,6 +35,7 @@ export class NavbarComponent implements OnInit {
       this.token = localStorage.getItem('token');
       this.user = JSON.parse(localStorage.getItem('usuario'));
       this.getPersonaByUser(this.user[0].Id);
+      this.getVehiculosList();
      
     }
   }
@@ -62,6 +63,18 @@ export class NavbarComponent implements OnInit {
       },
       err => console.log(err)
     )           
+}
+
+
+public getVehiculosList(){
+
+  this.pService.getVehiculos(this.token)
+  .subscribe(
+    res => {
+      localStorage.setItem('vehiculos',JSON.stringify(res));
+    },
+    err => console.log(err)
+  )           
 }
 
 logout(){
